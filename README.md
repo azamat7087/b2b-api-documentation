@@ -658,7 +658,7 @@ Response:
 
 
 
-![models_drw](/home/azamat/git/b2b-api-documentation/img/models_drw.png)
+![models_drw](/img/models_drw.png)
 
 
 
