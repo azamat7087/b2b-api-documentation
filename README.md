@@ -913,6 +913,591 @@ Response:
 
 
 
+6. Work Counts [Retrieve, List, Create] - count of works
+
+```
+ http://127.0.0.1:8000/smart_doc/work_counts/
+```
+
+Response:	
+
+**GET:**
+
+```json
+{
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": "d54a5b54",
+            "count": 2,
+            "total_sum": "42.00",
+            "another_info": "",
+            "date_of_completion": "2015-10-22T19:50:08+06:00",
+            "work": "7002005a",
+            "staff": "65b4e1b7"
+        }
+    ]
+}
+```
+
+
+
+**POST:**
+
+```json
+{
+    "count": 5,
+    "another_info": "",
+    "date_of_completion": "2015-10-22T19:50:08+06:00",
+    "work": "7002005a"
+}
+```
+
+
+
+
+
+7. Product Counts [Retrieve, List, Create] - count of products
+
+```
+ http://127.0.0.1:8000/smart_doc/product_count/
+```
+
+Response:	
+
+**GET:**
+
+```json
+{
+    "count": 3,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": "58a1ad9e",
+            "product": {
+                "id": "dd78f364",
+                "name": "Продукт_3",
+                "description": "Описание продукта 4",
+                "measure": "шт",
+                "manufacturer": "Компания",
+                "image": null,
+                "price": "1.00",
+                "staff": "65b4e1b7"
+            },
+            "count": 2,
+            "total_sum": "2.00",
+            "staff": "65b4e1b7"
+        },
+...
+```
+
+
+
+**POST:**
+
+```json
+{
+    "product": "dd78f364",
+    "count": 64
+}
+```
+
+
+
+
+
+
+
+8. Waybills Product [Retrieve, List, Create] - products for waybill
+
+```
+ http://127.0.0.1:8000/smart_doc/waybills_products/
+```
+
+Response:	
+
+**GET:**
+
+```json
+{
+    "count": 5,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": "63f15a23",
+            "subject_to_leave": 3,
+            "subject_left": 2,
+            "total_sum": "794.00",
+            "product": "e8172fb4",
+            "staff": "65b4e1b7"
+        },
+        {
+            "id": "b4e3addc",
+            "subject_to_leave": 3,
+            "subject_left": 2,
+            "total_sum": "794.00",
+            "product": "e8172fb4",
+            "staff": "65b4e1b7"
+        },
+...
+```
+
+
+
+**POST:**
+
+```json
+{
+    "subject_to_leave": 6,
+    "subject_left": 4,
+    "product": "e8172fb4"
+}
+```
+
+
+
+
+
+
+
+9. Act of Works [Retrieve, List, Create] - act of work object(Need to generate pdf document)
+
+```
+ http://127.0.0.1:8000/smart_doc/act_of_works/
+```
+
+Response:	
+
+**GET:**
+
+```json
+{
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": "80dce3c1",
+            "contract": "Без договора",
+            "total_sum": "42.00",
+            "nds_percent": "0.00",
+            "nds_sum": "0.00",
+            "executor": "b0eff6b0",
+            "customer": "b0eff6b0",
+            "staff": "65b4e1b7",
+            "works": [
+                "d54a5b54"
+            ]
+        }
+    ]
+}
+```
+
+
+
+**POST:**
+
+```json
+{
+    "contract": "Без договора",
+    "total_sum": "42.00",
+    "nds_percent": "0.00",
+    "nds_sum": "0.00",
+    "executor": "b0eff6b0",
+    "customer": "b0eff6b0",
+    "staff": "65b4e1b7",
+    "works": [
+        "d54a5b54"
+    ]
+}
+```
+
+
+
+
+
+
+
+
+
+9. Waybills [Retrieve, List, Create] - waybills object(Need to generate pdf document)
+
+```
+ http://127.0.0.1:8000/smart_doc/waybills/
+```
+
+Response:	
+
+**GET:**
+
+```json
+{
+    "count": 6,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": "152a492f",
+            "responsible_user": "Азамат Боранбаев",
+            "total_count_left": 2,
+            "total_sum": "1191.00",
+            "nds_percent": "0.00",
+            "nds_sum": "0.00",
+            "transport_company": "8e7fdcb4",
+            "sender": null,
+            "recipient": null,
+            "staff": "65b4e1b7",
+            "products": [
+                "b4e3addc"
+            ]
+        },
+    ...
+```
+
+
+
+**POST:**
+
+```json
+ {
+    "responsible_user": "Азамат Боранбаев",
+    "nds_percent": "0.00",
+    "nds_sum": "0.00",
+    "transport_company": "8e7fdcb4",
+    "sender": null,
+    "recipient": null,
+    "products": [
+        "b4e3addc"
+    ]
+}
+```
+
+
+
+
+
+10. Commercial Offers [Retrieve, List, Create] - commercial offers object(Need to generate pdf document)
+
+```
+ http://127.0.0.1:8000/smart_doc/commercial_offers/
+```
+
+Response:	
+
+**GET:**
+
+```json
+{
+    "count": 6,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": "152a492f",
+            "responsible_user": "Азамат Боранбаев",
+            "total_count_left": 2,
+            "total_sum": "1191.00",
+            "nds_percent": "0.00",
+            "nds_sum": "0.00",
+            "transport_company": "8e7fdcb4",
+            "sender": null,
+            "recipient": null,
+            "staff": "65b4e1b7",
+            "products": [
+                "b4e3addc"
+            ]
+        },
+    ...
+```
+
+
+
+**POST:**
+
+```json
+ {
+    "responsible_user": "Азамат Боранбаев",
+    "nds_percent": "0.00",
+    "nds_sum": "0.00",
+    "transport_company": "8e7fdcb4",
+    "sender": null,
+    "recipient": null,
+    "products": [
+        "b4e3addc"
+    ]
+}
+```
+
+
+
+
+
+
+
+11. Invoices For Payment [Retrieve, List, Create] - invoices for payment (Need to generate pdf document)
+
+```
+ http://127.0.0.1:8000/smart_doc/invoices_for_payment/
+```
+
+Response:	
+
+**GET:**
+
+```json
+{
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": "5b8e02b2",
+            "date_of_expire": "2021-12-24T12:10:49.431706+06:00",
+            "total_sum": "6.00",
+            "total_count": 6,
+            "nds_percent": "0.00",
+            "nds_sum": "0.00",
+            "contract": "Без договора",
+            "delivery_time": "До 30 дней",
+            "payment_condition": "оплата по реквизитам, 100% предоплата",
+            "receive_type": "самовывоз",
+            "receive_address": "",
+            "staff": "65b4e1b7",
+            "beneficiary": "ffe11841",
+            "products": [
+                "c5f6df2c"
+            ]
+        }
+    ]
+}
+```
+
+
+
+**POST:**
+
+```json
+{
+    "date_of_expire": "2021-12-24T12:10:49.431706+06:00",
+    "total_count": 6,
+    "nds_percent": "0.00",
+    "nds_sum": "0.00",
+    "contract": "Без договора",
+    "delivery_time": "До 30 дней",
+    "payment_condition": "оплата по реквизитам, 100% предоплата",
+    "receive_type": "самовывоз",
+    "receive_address": "",
+    "staff": "65b4e1b7",
+    "beneficiary": "ffe11841",
+    "products": [
+        "c5f6df2c"
+    ]
+}
+```
+
+
+
+12. Waybills [Retrieve, List, Create] - waybills (Need to generate pdf document)
+
+```
+ http://127.0.0.1:8000/smart_doc/waybills/
+```
+
+Response:	
+
+**GET:**
+
+```json
+{
+    "count": 7,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": "62eff7f1",
+            "responsible_user": "Азамат Боранбаев",
+            "total_count_left": 2,
+            "total_sum": "1191.00",
+            "nds_percent": "0.00",
+            "nds_sum": "0.00",
+            "transport_company": "8e7fdcb4",
+            "sender": null,
+            "recipient": null,
+            "staff": "65b4e1b7",
+            "products": [
+                "b4e3addc"
+            ]
+        },
+...
+```
+
+
+
+**POST:**
+
+```json
+{
+    "responsible_user": "Азамат Боранбаев",
+    "total_count_left": 2,
+    "total_sum": "1191.00",
+    "nds_percent": "0.00",
+    "nds_sum": "0.00",
+    "transport_company": "8e7fdcb4",
+    "sender": null,
+    "recipient": null,
+    "staff": "65b4e1b7",
+    "products": [
+        "b4e3addc"
+    ]
+}
+```
+
+
+
+13. Act Of Works [Retrieve, List, Create] - act of works (Need to generate pdf document)
+
+```
+ http://127.0.0.1:8000/smart_doc/act_of_works/
+```
+
+Response:	
+
+**GET:**
+
+```json
+{
+    "count": 2,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": "a14bb77b",
+            "contract": "Без договора",
+            "total_sum": "42.00",
+            "nds_percent": "0.00",
+            "nds_sum": "0.00",
+            "executor": "b0eff6b0",
+            "customer": "b0eff6b0",
+            "staff": "65b4e1b7",
+            "works": [
+                "d54a5b54"
+            ]
+        },
+...
+```
+
+
+
+**POST:**
+
+```json
+ {
+    "contract": "Без договора",
+    "total_sum": "42.00",
+    "nds_percent": "0.00",
+    "nds_sum": "0.00",
+    "executor": "b0eff6b0",
+    "customer": "b0eff6b0",
+    "staff": "65b4e1b7",
+    "works": [
+        "d54a5b54"
+    ]
+}
+```
+
+
+
+
+
+14. PDF document generation[Retrieve, List, Create] - generation of pdf documents for DOCUMENT OBJECTS(Waybills, Act of Works, Invoices For Payments, Commercial Offers) (Need to generate pdf document)
+
+Available types: 
+
+​	type = ["co", "ip", "wb", "aw"]  WHERE co - Commercial Offers, ip - Invoices For Payment, wb - WayBills, aw - Act of Works
+
+Response:	
+
+**GET:**
+
+```json
+{
+    "count": 64,
+    "next": "http://127.0.0.1:8000/smart_docs/documents/public/?page=2",
+    "previous": null,
+    "results": [
+        {
+            "id": "42b38e43",
+            "doc_id": 1144459652277,
+            "type": "co",
+            "form": "pu",
+            "content_id": "26d8eaf",
+            "file": "http://127.0.0.1:8000/media/docs/Document_1144459652277.pdf",
+            "qr_code": "http://127.0.0.1:8000/media/qr_codes/1144459652277.png",
+            "user": "65b4e1b7",
+            "company_sender": "6cc13d0e",
+            "company_recipient": "3df8b669",
+            "email_recipients": []
+        },
+...
+```
+
+
+
+**POST:**
+
+```json
+{
+    "type": "co",
+    "form": "pu",
+    "content_id": "26d8eaf",
+    "company_sender": "6cc13d0e",
+    "company_recipient": "3df8b669",
+    "email_recipients": []
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
