@@ -1464,29 +1464,98 @@ Response:
 
 
 
+15. Check document [POST] - check file with sha256
+
+```
+ http://127.0.0.1:8000/smart_doc/check_file/
+```
+
+Request:	
+
+**POST:**
+
+![image-20220114133122121](/home/azamat/git/b2b-api-documentation/img/r.png)
+
+
+
+Response:
+
+If file is valid:
+
+```json
+{
+    "id": "46284621",
+    "doc_id": 8464003412887,
+    "type": "in",
+    "form": "pu",
+    "content_id": "6ed1cfbf",
+    "file": "/media/docs/Document_8464003412887.pdf",
+    "qr_code": "/media/qr_codes/8464003412887.png",
+    "user": "65b4e1b7",
+    "company_sender": "6cc13d0e",
+    "company_recipient": "3df8b669",
+    "email_recipients": [],
+    "viewers": [
+        "65b4e1b7",
+        "3f992a34"
+    ]
+}
+```
+
+
+
+else:
+
+```
+"Not valid"
+```
 
 
 
 
 
+15. Add viewers to file [POST] - check file with sha256
+
+```
+ http://127.0.0.1:8000/smart_doc/check_file/
+```
+
+Request:	
+
+**POST:**
+
+```json
+{
+    "staff": ["3f992a34",  "65b4e1b7"],
+    "document_id": "46284621"
+}
+```
 
 
 
 
 
+Response:
 
-
-
-
-
-
-
-
-
-
-
-
-
+```json
+{
+    "id": "46284621",
+    "doc_id": 8464003412887,
+    "type": "in",
+    "form": "pu",
+    "content_id": "6ed1cfbf",
+    "file": "/media/docs/Document_8464003412887.pdf",
+    "qr_code": "/media/qr_codes/8464003412887.png",
+    "user": "65b4e1b7",
+    "company_sender": "6cc13d0e",
+    "company_recipient": "3df8b669",
+    "email_recipients": [],
+    "viewers": [
+        "65b4e1b7",
+        "3f992a34"
+    ]
+}
+```
 
 
 
