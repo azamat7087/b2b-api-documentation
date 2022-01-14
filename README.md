@@ -1474,8 +1474,7 @@ Request:
 
 **POST:**
 
-![image-20220114133122121](/home/azamat/git/b2b-api-documentation/img/r.png)
-
+![r](/img/r.png)
 
 
 Response:
