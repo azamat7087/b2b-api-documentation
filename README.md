@@ -54,7 +54,7 @@ This is a API documentation for business to business application.
 2. Sub_Sections [Retrieve, List] - sub_sections of companies
 
 ```
- http://127.0.0.1:8000/clients/sub_sections/
+ http://127.0.0.1:8000/clients/sections/sub_sections/
 ```
 
 Response:
@@ -83,38 +83,10 @@ Response:
         ...
 ```
 
-
-
-3. Currencies [Retrieve] - exchange rate
+3. Rubrics [Retrieve, List] - rubrics of companies
 
 ```
- http://127.0.0.1:8000/clients/currencies/
-```
-
-Response:
-
-```json
-{
-    "CNY_sale": "68.50",
-    "CNY_buy": "67.10",
-    "CNY_difference": "0.0",
-    "USD_sale": "434.90",
-    "USD_buy": "433.50",
-    "USD_difference": "0.0",
-    "RUB_sale": "5.96",
-    "RUB_buy": "5.91",
-    "RUB_difference": "0.0",
-    "EUR_sale": "493.30",
-    "EUR_buy": "491.30",
-    "EUR_difference": "0.0"
-}
-        ...
-```
-
-4. Rubrics [Retrieve, List] - rubrics of companies
-
-```
- http://127.0.0.1:8000/clients/rubrics/
+ http://127.0.0.1:8000/clients/sections/sub_sections/rubrics/
 ```
 
 Response:
@@ -149,6 +121,32 @@ Response:
 ```
 
 
+
+4. Currencies [Retrieve] - exchange rate
+
+```
+ http://127.0.0.1:8000/clients/currencies/
+```
+
+Response:
+
+```json
+{
+    "CNY_sale": "68.50",
+    "CNY_buy": "67.10",
+    "CNY_difference": "0.0",
+    "USD_sale": "434.90",
+    "USD_buy": "433.50",
+    "USD_difference": "0.0",
+    "RUB_sale": "5.96",
+    "RUB_buy": "5.91",
+    "RUB_difference": "0.0",
+    "EUR_sale": "493.30",
+    "EUR_buy": "491.30",
+    "EUR_difference": "0.0"
+}
+        ...
+```
 
 5. News [Retrieve] - latest news
 
@@ -352,8 +350,7 @@ Response:
       ...
 ```
 
-
-13. Emails [Retrieve, List] - email with client data
+11. Emails [Retrieve, List] - email with client data
 
 ```
  http://127.0.0.1:8000/clients/krp_names/
@@ -398,7 +395,7 @@ Response:
 
 
 
-13. Phone numbers [Retrieve, List] - phone numbers with client data (AUTH ONLY)
+12. Phone numbers [Retrieve, List] - phone numbers with client data (AUTH ONLY)
 
 ```
  http://127.0.0.1:8000/clients/phone_numbers/
@@ -444,9 +441,7 @@ Response:
 
 
 
-
-
-14. Clients [Retrieve, List] - all clients data (AUTH ONLY)
+13. Clients [Retrieve, List] - all clients data (AUTH ONLY)
 
 ```
  http://127.0.0.1:8000/clients/clients/
@@ -525,7 +520,7 @@ Response:
 
 
 
-15. Staff [Retrieve, List] - returns all users position (AUTH ONLY)
+14. Staff [Retrieve, List] - returns all users position (AUTH ONLY)
 
 ```
  http://127.0.0.1:8000/clients/staff/
@@ -558,7 +553,7 @@ Response:
 
 
 
-16. Get User Company [Retrieve] - returns current user company and position in this company
+15. Get User Company [Retrieve] - returns current user company and position in this company
 
 ```
  http://127.0.0.1:8000/clients/get_user_company/
